@@ -53,8 +53,6 @@ This sample app demonstrates an Android architecture pattern - MVC(Model, View, 
     
 <!-- References -->
 <h2>References</h2>
-<p>The purpose of this project was to understand the core principles of the MVC pattern. You can check out more information about MVP in following links.</p>
-<li><a href="https://www.geeksforgeeks.org/mvp-model-view-presenter-architecture-pattern-in-android-with-example/">MVP (Model View Presenter) Architecture Pattern in Android with Example</a></li>
-<li><a href="https://medium.com/cr8resume/make-you-hand-dirty-with-mvp-model-view-presenter-eab5b5c16e42">Model View Presenter(MVP) in Android with a simple demo project</a></li>
-<li><a href="https://www.kodeco.com/7026-getting-started-with-mvp-model-view-presenter-on-android">Getting Started with MVP (Model View Presenter) on Android</a></li>
-<li><a href="https://androidwave.com/android-mvp-architecture-for-beginners-demo-app/">Android MVP Architecture for Beginners (Demo App)</a></li>
+<p>The purpose of this project was to understand the core principles of the MVC pattern. You can check out more information about MVC in following links.</p>
+<li><a href="https://www.geeksforgeeks.org/mvc-model-view-controller-architecture-pattern-in-android-with-example/">MVC (Model View Controller) Architecture Pattern in Android with Example</a></li>
+<li><a href="https://medium.com/upday-devs/android-architecture-patterns-part-1-model-view-controller-3baecef5f2b6/">Android Architecture Patterns Part 1: Model-View-Controller</a></li>
