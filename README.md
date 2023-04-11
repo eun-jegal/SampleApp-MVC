@@ -29,12 +29,12 @@ This sample app demonstrates an Android architecture pattern - MVC(Model, View, 
 <h2>What is MVC pattern?</h2>
 <p>MVP stands for Model-View-Controller.</p>
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/57670625/229898324-82244a41-1e21-4962-8997-27c04d06c89c.jpg" width="85%"/>
+   <img src="https://user-images.githubusercontent.com/57670625/231273596-69bdbe8b-897c-41c6-8d99-a0c2ece70ec5.jpg" width="85%"/>
 </p>
 <ul>
 <li><b>Model</b>: Model is a layer for storing data. It is responsible for all business logics and communication with the database and network layers.</li>
 <li><b>View</b>: View represents UI layer including activity and fragments. View displays user interfaces and notifies Presenter to keep track of user interactions.</li>
-<li><b>Controller</b>: </li>
+<li><b>Controller</b>: Controller is a bridge between View and Model. It contains core application logics and request data to Model when View requests.</li>
 </ul>
 <br>
 
