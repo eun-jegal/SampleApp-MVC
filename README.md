@@ -47,12 +47,11 @@ This sample app demonstrates an Android architecture pattern - MVC(Model, View, 
 
 <!-- App Architecture -->
 <h2>App Architecture</h2>
-<p>This sample app was built with MVC pattern.</p>
+<p>This sample app was built with MVC pattern. Activities and fragments perform as both View and Controller. Model should be a separate module which does not extend Android class so that it's testable.</p>
 <p align="center">
    <img src="https://user-images.githubusercontent.com/57670625/231835531-79dfc865-f3a0-499f-800a-5ab7eca202ae.jpg" width="85%"/>
 </p>
 <h3>How MVC works in this app</h3>
-<p>The below diagram presents how the app responds according to an user interaction.</p>
 
 <p align="center">
    <img src="" width="55%"/>
