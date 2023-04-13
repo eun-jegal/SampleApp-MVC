@@ -91,4 +91,8 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         }
     }
 
+    override fun onStop() {
+        super.onStop()
+        job.cancel()
+    }
 }
