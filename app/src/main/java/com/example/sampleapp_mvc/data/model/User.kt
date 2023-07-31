@@ -3,7 +3,7 @@ package com.example.sampleapp_mvc.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class UserItem(
+data class User(
     @SerializedName("avatar")
     val avatar: String,
     @SerializedName("device_Token")

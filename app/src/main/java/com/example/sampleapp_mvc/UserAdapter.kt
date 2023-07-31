@@ -1,48 +1,52 @@
 package com.example.sampleapp_mvc
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.sampleapp_mvc.data.model.UserItem
+import com.example.sampleapp_mvc.data.model.User
+import com.example.sampleapp_mvc.databinding.ListItemBinding
 
-class UserAdapter(
-    private val users: ArrayList<UserItem>
-): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+
+    private val itemCallback = object : DiffUtil.ItemCallback<User>() {
+        override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
+            return oldItem == newItem
+        }
+    }
+
+    val diffUtil = AsyncListDiffer(this, itemCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val listItemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        return UserViewHolder(listItemView)
+        val listItemBinding =
+            ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return UserViewHolder(listItemBinding)
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.bind(users[position])
+        holder.bind(diffUtil.currentList[position])
     }
 
     override fun getItemCount(): Int {
-        return users.size
-    }
-
-    fun addData(list: List<UserItem>) {
-        users.clear()
-        users.addAll(list)
-        notifyDataSetChanged()
+        return diffUtil.currentList.size
     }
 
     inner class UserViewHolder(
-        private val itemView: View
-    ) : RecyclerView.ViewHolder(itemView) {
+        private val binding: ListItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(userItem: UserItem) {
-            itemView.apply {
-                findViewById<TextView>(R.id.text_name).text = userItem.name
-                findViewById<TextView>(R.id.text_email).text = userItem.name
-                val imageAvatar = findViewById<ImageView>(R.id.image_avatar)
+        fun bind(user: User) {
+            binding.apply {
+                textName.text = user.name
+                textEmail.text = user.email
                 Glide.with(imageAvatar.context)
-                    .load(userItem.avatar)
+                    .load(user.avatar)
                     .centerCrop()
                     .into(imageAvatar)
             }
